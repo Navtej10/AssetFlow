@@ -1,0 +1,17 @@
+{
+  "node": {
+    "400d498ea60df0801e270e479ab7490e1d83c0e6fa": {
+      "workers": {
+        "app/(dashboard)/bookings/page": {
+          "moduleId": 82003,
+          "async": true,
+          "exportedName": "createBooking",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/booking.ts"
+        }
+      },
+      "exportedName": "createBooking",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/booking.ts"
+    }
+  },
+  "edge": {}
+}

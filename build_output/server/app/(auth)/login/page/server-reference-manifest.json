@@ -1,0 +1,17 @@
+{
+  "node": {
+    "60fdba73e42ac1c98671273b1845c68d534ef3fa15": {
+      "workers": {
+        "app/(auth)/login/page": {
+          "moduleId": 66358,
+          "async": true,
+          "exportedName": "authenticate",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/auth.ts"
+        }
+      },
+      "exportedName": "authenticate",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/auth.ts"
+    }
+  },
+  "edge": {}
+}

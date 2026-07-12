@@ -1,0 +1,41 @@
+{
+  "node": {
+    "402937411f6018d23510e45405089814879c30ef44": {
+      "workers": {
+        "app/(dashboard)/audit/page": {
+          "moduleId": 22540,
+          "async": true,
+          "exportedName": "verifyAuditItem",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/audit.ts"
+        }
+      },
+      "exportedName": "verifyAuditItem",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/audit.ts"
+    },
+    "4042dfed15b05eb7a96290486f9d5e719921276f6b": {
+      "workers": {
+        "app/(dashboard)/audit/page": {
+          "moduleId": 22540,
+          "async": true,
+          "exportedName": "closeAuditCycle",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/audit.ts"
+        }
+      },
+      "exportedName": "closeAuditCycle",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/audit.ts"
+    },
+    "4099576b9868934fe3f06cb1380aa5121557c50d67": {
+      "workers": {
+        "app/(dashboard)/audit/page": {
+          "moduleId": 22540,
+          "async": true,
+          "exportedName": "createAuditCycle",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/audit.ts"
+        }
+      },
+      "exportedName": "createAuditCycle",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/audit.ts"
+    }
+  },
+  "edge": {}
+}

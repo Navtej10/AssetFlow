@@ -1,0 +1,3 @@
+{
+  "/(dashboard)/allocations/page": "app/(dashboard)/allocations/page.js"
+}

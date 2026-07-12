@@ -40,19 +40,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
-        token.role = (user as any).role;
-        token.departmentId = (user as any).departmentId;
+        token.role = (user as unknown as Record<string, unknown>).role;
+        token.departmentId = (user as unknown as Record<string, unknown>).departmentId;
       }
       return token;
     },
     async session({ session, token }) {
       if (token && session.user) {
         session.user.id = token.id as string;
-        (session.user as any).role = token.role;
-        (session.user as any).departmentId = token.departmentId;
+        (session.user as unknown as Record<string, unknown>).role = token.role;
+        (session.user as unknown as Record<string, unknown>).departmentId = token.departmentId;
       }
       return session;
     }
   },
-  session: { strategy: "jwt" }
+  session: { strategy: "jwt" },
+  secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET || "assetflow_super_secret_key_for_development_and_erp_security_12345",
 })

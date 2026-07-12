@@ -31,7 +31,7 @@ export default function LoginPage() {
               id="email"
               type="email"
               name="email"
-              placeholder="admin@assetflow.com"
+              placeholder="kushal@assetflow.com"
               required
               className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
             />
@@ -71,8 +71,8 @@ export default function LoginPage() {
           <p className="text-sm text-muted-foreground mb-2">Demo Credentials:</p>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <div className="bg-muted p-2 rounded-md">
-              <span className="font-semibold block text-foreground">Admin</span>
-              admin@assetflow.com<br/>password
+              <span className="font-semibold block text-foreground">Admin (Kushal Joshi)</span>
+              kushal@assetflow.com<br/>password
             </div>
             <div className="bg-muted p-2 rounded-md">
               <span className="font-semibold block text-foreground">Employee</span>

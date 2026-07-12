@@ -26,7 +26,7 @@ export default async function BookingsPage() {
         <div className="md:col-span-2 space-y-6">
           {bookableAssets.length === 0 ? (
             <div className="bg-card border border-border rounded-xl p-8 text-center text-muted-foreground shadow-sm">
-              No bookable resources found. Register an asset and mark it as "Bookable".
+              No bookable resources found. Register an asset and mark it as &quot;Bookable&quot;.
             </div>
           ) : (
             bookableAssets.map(asset => (

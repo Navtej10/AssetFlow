@@ -1,0 +1,29 @@
+{
+  "node": {
+    "406550c5b8f8c17f5331eaf903f2df0861a86393e5": {
+      "workers": {
+        "app/(dashboard)/assets/[id]/page": {
+          "moduleId": 31851,
+          "async": true,
+          "exportedName": "allocateAsset",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/asset.ts"
+        }
+      },
+      "exportedName": "allocateAsset",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/asset.ts"
+    },
+    "40f72633d4b491e82993a2e8ff8064ee0b2c9a9a5b": {
+      "workers": {
+        "app/(dashboard)/assets/[id]/page": {
+          "moduleId": 31851,
+          "async": true,
+          "exportedName": "createAsset",
+          "filename": "OneDrive/Documents/AssetFlow/src/actions/asset.ts"
+        }
+      },
+      "exportedName": "createAsset",
+      "filename": "OneDrive/Documents/AssetFlow/src/actions/asset.ts"
+    }
+  },
+  "edge": {}
+}

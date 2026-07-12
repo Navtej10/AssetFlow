@@ -1,0 +1,52 @@
+{
+  "app": {
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(auth)/login/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/allocations/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/assets/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/assets/new/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/assets/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/audit/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/bookings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/employees/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/maintenance/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/notifications/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/organization/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/reports/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/(dashboard)/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ],
+    "[project]/OneDrive/Documents/AssetFlow/src/app/_not-found/page": [
+      "static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

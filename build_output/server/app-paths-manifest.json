@@ -1,0 +1,21 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(dashboard)/allocations/page": "app/(dashboard)/allocations/page.js",
+  "/(dashboard)/assets/[id]/page": "app/(dashboard)/assets/[id]/page.js",
+  "/(dashboard)/assets/new/page": "app/(dashboard)/assets/new/page.js",
+  "/(dashboard)/assets/page": "app/(dashboard)/assets/page.js",
+  "/(dashboard)/audit/page": "app/(dashboard)/audit/page.js",
+  "/(dashboard)/bookings/page": "app/(dashboard)/bookings/page.js",
+  "/(dashboard)/employees/page": "app/(dashboard)/employees/page.js",
+  "/(dashboard)/maintenance/page": "app/(dashboard)/maintenance/page.js",
+  "/(dashboard)/notifications/page": "app/(dashboard)/notifications/page.js",
+  "/(dashboard)/organization/page": "app/(dashboard)/organization/page.js",
+  "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/(dashboard)/reports/page": "app/(dashboard)/reports/page.js",
+  "/(dashboard)/settings/page": "app/(dashboard)/settings/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/seed/route": "app/api/seed/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}

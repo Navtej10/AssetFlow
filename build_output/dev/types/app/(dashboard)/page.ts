@@ -1,4 +1,4 @@
-// File: F:\AssetFlow\src\app\(dashboard)\page.tsx
+// File: C:\Users\joshi\OneDrive\Documents\AssetFlow\src\app\(dashboard)\page.tsx
 import * as entry from '../../../../../src/app/(dashboard)/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

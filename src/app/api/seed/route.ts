@@ -17,7 +17,7 @@ export async function GET() {
 
     // Create Users
     const admin = await prisma.user.create({
-      data: { name: "Admin User", email: "admin@assetflow.com", passwordHash, role: "ADMIN", departmentId: dept1.id }
+      data: { name: "Kushal Joshi", email: "kushal@assetflow.com", passwordHash, role: "ADMIN", departmentId: dept1.id }
     });
     const manager = await prisma.user.create({
       data: { name: "Asset Manager", email: "manager@assetflow.com", passwordHash, role: "ASSET_MANAGER", departmentId: dept2.id }
