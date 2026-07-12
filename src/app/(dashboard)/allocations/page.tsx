@@ -42,7 +42,7 @@ export default async function AllocationsPage() {
             />
           </div>
           <span className="text-xs font-semibold px-3 py-1 bg-blue-50 text-[#2563EB] rounded-full border border-blue-100">
-            {allocations.length || 834} Active Allocations
+            {allocations.length} Active Allocations
           </span>
         </div>
 
@@ -97,50 +97,11 @@ export default async function AllocationsPage() {
               ))}
 
               {allocations.length === 0 && (
-                <>
-                  <tr className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-[#2563EB]">AF-0021</td>
-                    <td className="py-3.5 px-4 font-medium text-slate-900">MacBook Pro M3 Max</td>
-                    <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-blue-100 text-[#2563EB] flex items-center justify-center font-bold text-xs shrink-0">R</div>
-                        <div>
-                          <p className="font-semibold text-slate-900">Raj Kumar</p>
-                          <p className="text-[11px] text-slate-400">Engineering Dept</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="py-3.5 px-4 text-slate-600">Jul 01, 2026</td>
-                    <td className="py-3.5 px-4 font-semibold text-slate-800">Jul 13, 2026 (Tomorrow)</td>
-                    <td className="py-3.5 px-4">
-                      <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">🔵 Allocated</span>
-                    </td>
-                    <td className="py-3.5 px-4 text-right">
-                      <Link href="/assets" className="text-[#2563EB] font-semibold hover:underline">Manage</Link>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/80 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-[#2563EB]">AF-0018</td>
-                    <td className="py-3.5 px-4 font-medium text-slate-900">MacBook Pro 16&quot; (2024)</td>
-                    <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs shrink-0">P</div>
-                        <div>
-                          <p className="font-semibold text-slate-900">Priya Sharma</p>
-                          <p className="text-[11px] text-slate-400">Design Dept</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="py-3.5 px-4 text-slate-600">Jun 10, 2026</td>
-                    <td className="py-3.5 px-4 font-bold text-rose-600">Jul 10, 2026 (Yesterday)</td>
-                    <td className="py-3.5 px-4">
-                      <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200">🔴 Overdue</span>
-                    </td>
-                    <td className="py-3.5 px-4 text-right">
-                      <Link href="/assets" className="text-rose-600 font-semibold hover:underline">Remind</Link>
-                    </td>
-                  </tr>
-                </>
+                <tr>
+                  <td colSpan={7} className="py-8 text-center text-slate-500">
+                    No active allocations found.
+                  </td>
+                </tr>
               )}
             </tbody>
           </table>

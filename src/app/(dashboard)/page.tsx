@@ -30,18 +30,24 @@ export const dynamic = "force-dynamic";
 export default async function DashboardHome() {
   const session = await auth();
 
-  // Fetch live metrics if available in SQLite, otherwise combine with enterprise baseline
-  const dbAssetCount = await prisma.asset.count({ where: { status: { notIn: ["DISPOSED", "RETIRED"] } } });
-  const dbAllocatedCount = await prisma.asset.count({ where: { status: "ALLOCATED" } });
-  const dbMaintenanceCount = await prisma.asset.count({ where: { status: "UNDER_MAINTENANCE" } });
+  // Fetch live metrics
+  const totalAssets = await prisma.asset.count({ where: { status: { notIn: ["DISPOSED", "RETIRED", "LOST"] } } });
+  const allocated = await prisma.asset.count({ where: { status: "ALLOCATED" } });
+  const maintenance = await prisma.asset.count({ where: { status: "UNDER_MAINTENANCE" } });
 
-  // Use rich baseline from spec (1,245 / 834 / 23) boosted by any real DB additions
-  const totalAssets = Math.max(1245, dbAssetCount);
-  const allocated = Math.max(834, dbAllocatedCount);
-  const maintenance = Math.max(23, dbMaintenanceCount);
-  const activeBookings = 54;
-  const pendingTransfers = 9;
-  const overdueReturns = 14;
+  const activeBookings = await prisma.booking.count({
+    where: { status: "ONGOING" }
+  });
+  
+  // A simplistic approximation for overdue returns: Allocations where expectedReturnDate < now and status is ACTIVE
+  const overdueReturns = await prisma.allocation.count({
+    where: { 
+      status: "ACTIVE",
+      expectedReturnDate: { lt: new Date() }
+    }
+  });
+
+  const pendingTransfers = 0; // Transfer feature not fully implemented in PRD scope
 
   // Fetch recent real assets from DB (or fallback/merge with realistic demo items)
   const dbRecentAssets = await prisma.asset.findMany({

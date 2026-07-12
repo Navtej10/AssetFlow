@@ -12,6 +12,7 @@ import {
   ClipboardCheck,
   BarChart3,
   Bell,
+  Activity,
   Building2,
   Users,
   Settings,
@@ -211,6 +212,15 @@ export default function Sidebar() {
           badgeCount={5}
         />
 
+        {/* Activity Logs */}
+        <NavItem
+          href="/activity-logs"
+          icon={Activity}
+          label="Activity Logs"
+          isActive={pathname.startsWith("/activity-logs")}
+          isCollapsed={isCollapsed}
+        />
+
         {/* Divider */}
         <div className="pt-3 pb-2 px-3">
           {!isCollapsed ? (
@@ -250,26 +260,6 @@ export default function Sidebar() {
           isActive={pathname.startsWith("/settings")}
           isCollapsed={isCollapsed}
         />
-        {!isCollapsed ? (
-          <div className="pt-2 border-t border-slate-200/60 flex items-center gap-3 px-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#1D4ED8] to-[#3B82F6] flex items-center justify-center text-white font-bold text-xs shadow-xs shrink-0">
-              KJ
-            </div>
-            <div className="overflow-hidden">
-              <p className="text-xs font-semibold text-[#111418] truncate leading-none">Kushal Joshi</p>
-              <div className="flex items-center gap-1.5 mt-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                <span className="text-[10px] text-slate-500 truncate font-medium">Head of ERP • Online</span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="flex justify-center pt-1" title="Kushal Joshi - Head of ERP">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#1D4ED8] to-[#3B82F6] flex items-center justify-center text-white font-bold text-xs shadow-xs">
-              KJ
-            </div>
-          </div>
-        )}
       </div>
     </aside>
   );

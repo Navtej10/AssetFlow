@@ -2,6 +2,7 @@
 
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { auth } from "@/auth";
 
 export async function createBooking(formData: FormData) {
   const assetId = formData.get("assetId") as string;
@@ -39,14 +40,14 @@ export async function createBooking(formData: FormData) {
   }
 
   // 3. Create the booking
-  // TODO: Use actual auth user
-  const admin = await prisma.user.findFirst({ where: { role: "ADMIN" } });
-  if (!admin) throw new Error("No user found");
+  const session = await auth();
+  const user = session?.user as any;
+  if (!user || !user.id) throw new Error("Unauthorized");
 
   await prisma.booking.create({
     data: {
       assetId,
-      bookedById: admin.id,
+      bookedById: user.id,
       startTime,
       endTime,
       status: "UPCOMING"

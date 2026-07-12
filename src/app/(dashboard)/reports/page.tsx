@@ -14,16 +14,6 @@ export default function ReportsPage() {
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Enterprise Reports & Analytics</h1>
           <p className="text-sm text-slate-600 mt-1">Export executive CSV summaries, depreciation schedules, and compliance audit logs.</p>
         </div>
-        <div className="flex items-center gap-2">
-          <button className="bg-white border border-slate-200/80 hover:bg-slate-50 text-slate-700 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-2xs">
-            <Filter className="w-4 h-4 text-slate-400" />
-            <span>Filter Period: Q3 2026</span>
-          </button>
-          <button className="bg-[#2563EB] hover:bg-[#1d4ed8] text-white px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-sm transition-all">
-            <Download className="w-4 h-4" />
-            <span>Export Master CSV</span>
-          </button>
-        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -34,14 +24,14 @@ export default function ReportsPage() {
             </div>
             <h2 className="font-bold text-base text-slate-900">Asset Valuation & Depreciation</h2>
             <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-              Comprehensive financial report detailing acquisition costs, straight-line depreciation, and current book value of all 1,245 active assets.
+              Comprehensive financial report detailing acquisition costs, straight-line depreciation, and current book value of all active assets.
             </p>
           </div>
           <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
             <span className="text-xs font-semibold text-emerald-600">Updated Today</span>
-            <button className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1">
-              Download Report (.XLSX) →
-            </button>
+            <a href="/api/reports/valuation" className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1">
+              Download Report (.CSV) →
+            </a>
           </div>
         </div>
 
@@ -56,10 +46,10 @@ export default function ReportsPage() {
             </p>
           </div>
           <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span className="text-xs font-semibold text-emerald-600">99.4% Verified</span>
-            <button className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1">
-              Download Report (.PDF) →
-            </button>
+            <span className="text-xs font-semibold text-emerald-600">Updated Today</span>
+            <a href="/api/reports/custody" className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1">
+              Download Report (.CSV) →
+            </a>
           </div>
         </div>
 
@@ -68,16 +58,16 @@ export default function ReportsPage() {
             <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold mb-3">
               <TrendingUp className="w-5 h-5" />
             </div>
-            <h2 className="font-bold text-base text-slate-900">Maintenance & Repair Costs</h2>
+            <h2 className="font-bold text-base text-slate-900">Maintenance & Repair Logs</h2>
             <p className="text-xs text-slate-500 mt-1 leading-relaxed">
               Historical repair ticket volume, mean time to resolution, and parts expenditure breakdown across hardware and vehicle fleet.
             </p>
           </div>
           <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span className="text-xs font-semibold text-amber-600">23 Active Tickets</span>
-            <button className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1">
+            <span className="text-xs font-semibold text-amber-600">Updated Today</span>
+            <a href="/api/reports/maintenance" className="text-xs font-bold text-[#2563EB] hover:underline flex items-center gap-1">
               Download Report (.CSV) →
-            </button>
+            </a>
           </div>
         </div>
       </div>

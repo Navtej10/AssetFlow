@@ -2,15 +2,18 @@
 
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { auth } from "@/auth";
 
 export async function createAuditCycle(formData: FormData) {
   const name = formData.get("name") as string;
   const startDateStr = formData.get("startDate") as string;
   const endDateStr = formData.get("endDate") as string;
 
-  // TODO: Auth
-  const admin = await prisma.user.findFirst({ where: { role: "ADMIN" } });
-  if (!admin) throw new Error("No admin found");
+  const session = await auth();
+  const admin = session?.user as any;
+  if (!admin || !admin.id || admin.role !== "ASSET_MANAGER" && admin.role !== "ADMIN") {
+    throw new Error("Unauthorized: Only Admins or Asset Managers can create audit cycles.");
+  }
 
   const auditCycle = await prisma.auditCycle.create({
     data: {
@@ -43,6 +46,9 @@ export async function verifyAuditItem(formData: FormData) {
   const result = formData.get("result") as string; // VERIFIED, MISSING, DAMAGED
   const notes = formData.get("notes") as string;
 
+  const session = await auth();
+  if (!session?.user) throw new Error("Unauthorized");
+
   await prisma.auditItem.update({
     where: { id: itemId },
     data: {
@@ -57,6 +63,12 @@ export async function verifyAuditItem(formData: FormData) {
 
 export async function closeAuditCycle(formData: FormData) {
   const cycleId = formData.get("cycleId") as string;
+
+  const session = await auth();
+  const admin = session?.user as any;
+  if (!admin || !admin.id || admin.role !== "ASSET_MANAGER" && admin.role !== "ADMIN") {
+    throw new Error("Unauthorized: Only Admins or Asset Managers can close audit cycles.");
+  }
 
   const cycle = await prisma.auditCycle.findUnique({
     where: { id: cycleId },

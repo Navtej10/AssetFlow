@@ -1,8 +1,12 @@
 import { Settings, Shield, Key, Bell, Database, Save } from "lucide-react";
+import { auth } from "@/auth";
 
 export const dynamic = "force-dynamic";
 
-export default function SettingsPage() {
+export default async function SettingsPage() {
+  const session = await auth();
+  const user = session?.user as any;
+
   return (
     <div className="space-y-6 max-w-4xl">
       <div>
@@ -21,15 +25,15 @@ export default function SettingsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
-              <input type="text" defaultValue="Kushal Joshi" className="w-full px-3.5 py-2 rounded-xl border border-[#E2E6ED] bg-slate-50 text-sm font-semibold text-[#111418]" />
+              <input type="text" defaultValue={user?.name || ""} className="w-full px-3.5 py-2 rounded-xl border border-[#E2E6ED] bg-slate-50 text-sm font-semibold text-[#111418]" />
             </div>
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Primary Email</label>
-              <input type="email" defaultValue="kushal@assetflow.com" className="w-full px-3.5 py-2 rounded-xl border border-[#E2E6ED] bg-slate-50 text-sm font-medium text-slate-700" />
+              <input type="email" defaultValue={user?.email || ""} className="w-full px-3.5 py-2 rounded-xl border border-[#E2E6ED] bg-slate-50 text-sm font-medium text-slate-700" />
             </div>
             <div>
               <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Assigned Role</label>
-              <input type="text" defaultValue="Head of Asset Operations & ERP" readOnly className="w-full px-3.5 py-2 rounded-xl border border-slate-200 bg-slate-100/60 text-sm font-bold text-[#1D4ED8]" />
+              <input type="text" defaultValue={user?.role || "ADMIN"} readOnly className="w-full px-3.5 py-2 rounded-xl border border-slate-200 bg-slate-100/60 text-sm font-bold text-[#1D4ED8]" />
             </div>
           </div>
         </div>

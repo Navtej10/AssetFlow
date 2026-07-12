@@ -9,15 +9,6 @@ export default async function EmployeesPage() {
     orderBy: { name: "asc" }
   });
 
-  const demoEmployees = [
-    { id: "e-1", name: "Raj Kumar", role: "Engineering Lead", dept: "Engineering", email: "raj.k@assetflow.com", status: "ACTIVE", assets: 14 },
-    { id: "e-2", name: "Priya Sharma", role: "Principal Designer", dept: "Design Studio", email: "priya.s@assetflow.com", status: "ACTIVE", assets: 6 },
-    { id: "e-3", name: "Ananya Iyer", role: "Finance Director", dept: "Finance & Admin", email: "ananya.i@assetflow.com", status: "ACTIVE", assets: 8 },
-    { id: "e-4", name: "Vikram Patel", role: "Senior DevOps Tech", dept: "Engineering", email: "vikram.p@assetflow.com", status: "ACTIVE", assets: 11 },
-    { id: "e-5", name: "Karan Mehta", role: "Sales Manager", dept: "Sales & Marketing", email: "karan.m@assetflow.com", status: "ACTIVE", assets: 5 },
-    { id: "e-6", name: "Dave Miller", role: "Lead IT Technician", dept: "IT Facilities", email: "dave.m@assetflow.com", status: "ACTIVE", assets: 22 }
-  ];
-
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -42,7 +33,7 @@ export default async function EmployeesPage() {
             />
           </div>
           <span className="text-xs font-semibold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-100">
-            {users.length + demoEmployees.length} Total Employees
+            {users.length} Total Employees
           </span>
         </div>
 
@@ -59,45 +50,6 @@ export default async function EmployeesPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {demoEmployees.map((emp) => (
-                <tr key={emp.id} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="py-3.5 px-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-[#2563EB]/10 text-[#2563EB] font-bold flex items-center justify-center shrink-0">
-                        {emp.name.split(" ").map(n => n[0]).join("")}
-                      </div>
-                      <div>
-                        <p className="font-bold text-slate-900">{emp.name}</p>
-                        <p className="text-[11px] text-slate-400">ID: {emp.id.toUpperCase()}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <p className="font-semibold text-slate-800">{emp.role}</p>
-                    <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
-                      <Building className="w-3 h-3 text-slate-400" /> {emp.dept}
-                    </p>
-                  </td>
-                  <td className="py-3.5 px-4 text-slate-600">
-                    <span className="flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-slate-400" /> {emp.email}
-                    </span>
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <span className="px-2.5 py-1 rounded-lg bg-blue-50 text-[#2563EB] font-bold text-xs flex items-center gap-1.5 w-fit">
-                      <Laptop className="w-3.5 h-3.5" /> {emp.assets} Assets Assigned
-                    </span>
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                      ● Active
-                    </span>
-                  </td>
-                  <td className="py-3.5 px-4 text-right font-semibold text-[#2563EB] hover:underline cursor-pointer">
-                    View Profile
-                  </td>
-                </tr>
-              ))}
 
               {users.map((user) => (
                 <tr key={user.id} className="hover:bg-slate-50/80 transition-colors">

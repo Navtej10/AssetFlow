@@ -4,8 +4,17 @@ import { Plus, Search } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
-export default async function AssetsPage() {
+export default async function AssetsPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
+  const { q } = await searchParams;
+
   const assets = await prisma.asset.findMany({
+    where: q ? {
+      OR: [
+        { name: { contains: q } },
+        { assetTag: { contains: q } },
+        { serialNumber: { contains: q } },
+      ]
+    } : undefined,
     include: { category: true },
     orderBy: { createdAt: "desc" }
   });
@@ -28,14 +37,16 @@ export default async function AssetsPage() {
 
       <div className="bg-card border border-border rounded-xl shadow-sm overflow-hidden">
         <div className="p-4 border-b border-border flex items-center gap-4">
-          <div className="relative flex-1 max-w-md">
+          <form method="GET" action="/assets" className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <input
+              name="q"
+              defaultValue={q || ""}
               type="text"
               placeholder="Search by tag, name, or serial..."
               className="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
             />
-          </div>
+          </form>
         </div>
         
         <div className="overflow-x-auto">

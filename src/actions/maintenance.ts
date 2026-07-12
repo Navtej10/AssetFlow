@@ -2,15 +2,16 @@
 
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { auth } from "@/auth";
 
 export async function raiseMaintenanceRequest(formData: FormData) {
   const assetId = formData.get("assetId") as string;
   const issueDescription = formData.get("issueDescription") as string;
   const priority = formData.get("priority") as string;
 
-  // TODO: Auth
-  const user = await prisma.user.findFirst({ where: { role: "EMPLOYEE" } });
-  if (!user) throw new Error("No user found");
+  const session = await auth();
+  const user = session?.user as any;
+  if (!user || !user.id) throw new Error("Unauthorized");
 
   await prisma.maintenanceRequest.create({
     data: {
@@ -29,9 +30,11 @@ export async function raiseMaintenanceRequest(formData: FormData) {
 export async function approveMaintenance(formData: FormData) {
   const requestId = formData.get("requestId") as string;
   
-  // TODO: Auth
-  const admin = await prisma.user.findFirst({ where: { role: "ADMIN" } });
-  if (!admin) throw new Error("No admin found");
+  const session = await auth();
+  const admin = session?.user as any;
+  if (!admin || !admin.id || admin.role !== "ASSET_MANAGER" && admin.role !== "ADMIN") {
+    throw new Error("Unauthorized: Only Admins or Asset Managers can approve maintenance.");
+  }
 
   const request = await prisma.maintenanceRequest.findUnique({ where: { id: requestId }});
   if (!request) throw new Error("Request not found");
@@ -65,9 +68,11 @@ export async function approveMaintenance(formData: FormData) {
 export async function resolveMaintenance(formData: FormData) {
   const requestId = formData.get("requestId") as string;
   
-  // TODO: Auth
-  const admin = await prisma.user.findFirst({ where: { role: "ADMIN" } });
-  if (!admin) throw new Error("No admin found");
+  const session = await auth();
+  const admin = session?.user as any;
+  if (!admin || !admin.id || admin.role !== "ASSET_MANAGER" && admin.role !== "ADMIN") {
+    throw new Error("Unauthorized: Only Admins or Asset Managers can resolve maintenance.");
+  }
 
   const request = await prisma.maintenanceRequest.findUnique({ where: { id: requestId }});
   if (!request) throw new Error("Request not found");

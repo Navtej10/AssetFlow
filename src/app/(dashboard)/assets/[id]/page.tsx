@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, UserCircle, Calendar } from "lucide-react";
 import { allocateAsset } from "@/actions/asset";
+import { requestTransfer } from "@/actions/transfer";
 
 export const dynamic = "force-dynamic";
 
@@ -156,10 +157,31 @@ export default async function AssetDetailPage({ params }: { params: Promise<{ id
               {currentAllocation && (
                 <div className="p-4 bg-muted/50 rounded-lg text-left mt-4 border border-border">
                   <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider mb-1">Current Holder</p>
-                  <p className="font-medium flex items-center gap-2">
+                  <p className="font-medium flex items-center gap-2 mb-4">
                     <UserCircle className="w-5 h-5 text-primary" />
                     {currentAllocation.receiverUser?.name}
                   </p>
+
+                  <h3 className="text-sm font-semibold mb-2 pt-4 border-t border-border">Request Transfer</h3>
+                  <form action={requestTransfer} className="space-y-3">
+                    <input type="hidden" name="assetId" value={asset.id} />
+                    <select
+                      name="toHolderId"
+                      required
+                      className="w-full px-3 py-2 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
+                    >
+                      <option value="">Select target user...</option>
+                      {users.map(u => (
+                        <option key={u.id} value={u.id}>{u.name}</option>
+                      ))}
+                    </select>
+                    <button
+                      type="submit"
+                      className="w-full bg-secondary hover:bg-secondary/80 text-secondary-foreground py-2 rounded-lg font-medium transition-colors text-sm"
+                    >
+                      Request Transfer
+                    </button>
+                  </form>
                 </div>
               )}
             </div>
