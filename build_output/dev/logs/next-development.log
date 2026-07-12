@@ -1,0 +1,18 @@
+{"timestamp":"00:00:09.465","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:09.466","source":"Server","level":"LOG","message":"  We detected TypeScript in your project and reconfigured your tsconfig.json file for you."}
+{"timestamp":"00:00:09.466","source":"Server","level":"LOG","message":"  The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:\n"}
+{"timestamp":"00:00:09.466","source":"Server","level":"LOG","message":"  \t- include was updated to add 'build_output/types/**/*.ts'"}
+{"timestamp":"00:00:09.466","source":"Server","level":"LOG","message":"  \t- include was updated to add 'build_output/dev/types/**/*.ts'"}
+{"timestamp":"00:00:09.467","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:10.994","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:14.320","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:00:25.228","source":"Server","level":"ERROR","message":"Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'F:\\WindowsApps'"}
+{"timestamp":"00:00:39.097","source":"Server","level":"ERROR","message":"⨯ PrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:\n\n```\nnew PrismaClient({\n  ...\n})\n```\n\nor\n\n```\nconstructor() {\n  super({ ... });\n}\n```\n          "}
+{"timestamp":"00:00:39.677","source":"Server","level":"ERROR","message":"⨯ PrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:\n\n```\nnew PrismaClient({\n  ...\n})\n```\n\nor\n\n```\nconstructor() {\n  super({ ... });\n}\n```\n          "}
+{"timestamp":"00:00:40.319","source":"Server","level":"ERROR","message":"⨯ PrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:\n\n```\nnew PrismaClient({\n  ...\n})\n```\n\nor\n\n```\nconstructor() {\n  super({ ... });\n}\n```\n          "}
+{"timestamp":"00:00:41.092","source":"Server","level":"ERROR","message":"⨯ PrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:\n\n```\nnew PrismaClient({\n  ...\n})\n```\n\nor\n\n```\nconstructor() {\n  super({ ... });\n}\n```\n          "}
+{"timestamp":"00:00:44.220","source":"Server","level":"LOG","message":"○ Compiling /_error ..."}
+{"timestamp":"00:00:47.236","source":"Server","level":"ERROR","message":"Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'F:\\WindowsApps'"}
+{"timestamp":"00:01:28.159","source":"Server","level":"ERROR","message":"⨯ SyntaxError: Unexpected end of JSON input"}
+{"timestamp":"00:01:32.966","source":"Server","level":"ERROR","message":"⨯ PrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:\n\n```\nnew PrismaClient({\n  ...\n})\n```\n\nor\n\n```\nconstructor() {\n  super({ ... });\n}\n```\n          "}
+{"timestamp":"00:01:33.842","source":"Server","level":"ERROR","message":"⨯ PrismaClientInitializationError: `PrismaClient` needs to be constructed with a non-empty, valid `PrismaClientOptions`:\n\n```\nnew PrismaClient({\n  ...\n})\n```\n\nor\n\n```\nconstructor() {\n  super({ ... });\n}\n```\n          "}
